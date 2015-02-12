@@ -105,6 +105,8 @@ var TableManaged = function () {
 
     var attributesPopulate = function () {
         var table = $('#attributeTable');
+        var page = $('.attributeManagementPage');
+        var form = $('#attributeForm');
         // begin first table
         table.dataTable({
             "processing": true,
@@ -163,8 +165,13 @@ var TableManaged = function () {
              ] */// set first column as a default sort by asc
         });
 
+        page.find('.table-toolbar').on('click', 'a', function(e) {
+            form.find('select option').attr('selected', '');
+            form.find('select option:first-child').attr('selected', 'selected');
 
-        $('#attributeTable tbody').on('click', 'a.attEdit',function (e) {
+            form.find('a.options').hide();
+        });
+        page.find('#attributeTable tbody').on('click', 'a.attEdit',function (e) {
             e.preventDefault();
             var edit = $(this);
             var type = edit.closest('td').siblings('td.type').text();
@@ -193,7 +200,13 @@ var TableManaged = function () {
                 }
             });
         });
-
+        form.on('change','select.type', function(e) {
+            if (form.find('select.type option:selected').text() == 'Select') {
+                form.find('a.options').show();
+            } else {
+                form.find('a.options').hide();
+            }
+        });
     };
 
     var optionsPopulate = function () {
