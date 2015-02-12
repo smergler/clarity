@@ -25,15 +25,21 @@ var Index = function () {
             '-ms-filter': 'blur(3px)'
         });
 
-        $('#logoutmodal').css({
-            'filter': 'blur(0px)',
-            '-webkit-filter': 'blur(0px)',
-            '-moz-filter': 'blur(0px)',
-            '-o-filter': 'blur(0px)',
-            '-ms-filter': 'blur(0px)'
-        });
+        $('#logoutmodaldialog').css({
+            'margin' : 0
+        })
 
-        $('#logoutmodal').show(200);
+        $('#logoutmodal').show(200, function() {
+
+            $('#logoutmodal').css({
+                'filter': 'blur(0px)',
+                '-webkit-filter': 'blur(0px)',
+                '-moz-filter': 'blur(0px)',
+                '-o-filter': 'blur(0px)',
+                '-ms-filter': 'blur(0px)',
+                'width': '603px'
+            });
+        });
 
         clearTimeout(popup);
     };

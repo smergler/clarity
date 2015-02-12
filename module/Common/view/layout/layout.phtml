@@ -19,6 +19,7 @@
     <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
@@ -88,7 +89,7 @@
 
 
 <div class="modal" id="logoutmodal" tabindex="-1" role="catProductModalAdd">
-    <div class="custom-modal-dialog modal-dialog">
+    <div class="custom-modal-dialog modal-dialog" id="logoutmodaldialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Logout?</h4>
@@ -654,6 +655,7 @@
 <script src="/assets/admin/pages/scripts/ui-toastr.js"></script>
 <script src="/assets/admin/pages/scripts/magento-api.js"></script>
 <script src="/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
+<script src="/assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
 
 
 <!--kanban board -->
